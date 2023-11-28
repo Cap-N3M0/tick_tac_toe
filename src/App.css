@@ -1,3 +1,9 @@
+body, *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 main{
     margin: 5rem 0 0 0;
     justify-content: center;
@@ -13,11 +19,19 @@ main{
 
 #game-container > #players > li{
     display: flex;
-    width: 50%;
+    width: 100%;
     padding: 1rem;
 
     align-items: center;
     justify-content: space-around;
+}
+
+#game-container > #players > li > button{
+    display: flex;
+    padding: 1rem;
+    background: inherit;
+    border: 2px solid Black;
+    box-shadow: 5px 5px black;
 }
 
 #game-container > #players > li.active{
@@ -31,8 +45,8 @@ main{
     align-items: center;
     justify-content: space-around;
     
-    font-size: larger;
-    font-weight: 900;
+    font-size: clamp(0.2vw,3vw,5vw);
+    font-weight: 700;
  
 }
 
@@ -49,16 +63,20 @@ main{
     list-style: none;
     display: flex;
     flex-direction: row;
-    margin: 1rem;
+    margin: 0.2rem;
 }
 
 #gameBoard > li >ol >li > button{
-    
-    height: 10rem;
-    width: 10rem;
+    max-height: 250px;
+    max-width: 250px;
 
-    font-size: 7rem;
+    height: 10vw;
+    width: 10vw;
+
+    
+    font-size: clamp(7vw,10vw,5vw);
     font-weight: 10;
+    
 }
 
 #logs{
