@@ -1,89 +1,154 @@
-body, *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+body,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-main{
-    margin: 5rem 0 0 0;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+main {
+  margin: 5vw 20vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  min-width: 250px;
 }
 
-#game-container > #players{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
+#game-container > #players {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
 }
 
-#game-container > #players > li{
-    display: flex;
-    width: 100%;
-    padding: 1rem;
+#game-container > #players > li {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  flex-wrap: wrap;
 
-    align-items: center;
-    justify-content: space-around;
+  align-items: center;
+  justify-content: space-around;
 }
 
-#game-container > #players > li > button{
-    display: flex;
-    padding: 1rem;
-    background: inherit;
-    border: 2px solid Black;
-    box-shadow: 5px 5px black;
+#game-container > #players > li > button {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  background: inherit;
+  border: 2px solid Black;
+  box-shadow: 5px 5px black;
 }
 
-#game-container > #players > li.active{
-        outline: 2px solid blue;
-        background-color: cadetblue ;
+#game-container > #players > li.active {
+  outline: 2px solid blue;
+  background-color: cadetblue;
 }
 
-#game-container > #players > li > .player{
-    display: flex;
-    width: 60%;
-    align-items: center;
-    justify-content: space-around;
-    
-    font-size: clamp(0.2vw,3vw,5vw);
-    font-weight: 700;
- 
+#game-container > #players > li > .player {
+  display: flex;
+  width: 60%;
+  align-items: center;
+  justify-content: space-around;
+
+  font-size: clamp(0.2vw, 3vw, 5vw);
+  font-weight: 700;
 }
 
-#gameBoard{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-
-    align-items: center;
-    justify-content: center;
+#game-container > #players > li > .player input {
+  font: inherit;
+  font-size: 1rem;
+  width: 10rem;
+  border: none;
+  padding: 0.5rem;
+  animation: pulse-text 2s infinite;
+  background-color: white;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-#gameBoard > li >ol >li{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    margin: 0.2rem;
+#game-container > #players > li > .player > #player_mark {
+  margin-left: 1rem;
+  font-size: 1rem;
 }
 
-#gameBoard > li >ol >li > button{
-    max-height: 250px;
-    max-width: 250px;
+#gameBoard {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
 
-    height: 10vw;
-    width: 10vw;
-
-    
-    font-size: clamp(7vw,10vw,5vw);
-    font-weight: 10;
-    
+  align-items: center;
+  justify-content: center;
 }
 
-#logs{
-    display: flex;
-    flex-direction: column;
+#gameBoard > li > ol > li {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0.5rem;
 }
 
-#logs > li{
-    list-style: none;
+#gameBoard > li > ol > li > button {
+  height: clamp(100px, 10vw, 250px);
+  width: clamp(100px, 10vw, 250px);
+
+  font-size: clamp(50px, 7vw, 150px);
+  font-weight: 10;
+}
+
+#logs {
+  display: flex;
+  flex-direction: column;
+}
+
+#logs > li {
+  list-style: none;
+}
+
+#game-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(40, 38, 23, 0.95);
+  animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
+}
+
+#game-over h2 {
+  font-family: "Caprasimo", cursive;
+  font-size: 4rem;
+  text-align: center;
+  color: #fcd256;
+  margin: 0;
+}
+
+#game-over p {
+  font-size: 2rem;
+  text-align: center;
+  color: #e1dec7;
+}
+
+#game-over button {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  background: none;
+  border: 2px solid #fcd256;
+  color: #fcd256;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s, color 0.2s;
+  box-shadow: 0 0 8px rgba(255, 187, 0, 0.4);
+}
+
+#game-over button:hover {
+  background: #fcd256;
+  color: #3f3b00;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
 }
